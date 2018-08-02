@@ -225,7 +225,7 @@ Messages
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   color:balck;
-    overflow: hidden;
+  overflow: auto;
   position: relative;
   width: 100%;
       background: #ffffff;

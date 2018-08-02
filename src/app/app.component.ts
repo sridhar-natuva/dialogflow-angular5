@@ -15,7 +15,7 @@ export class AppComponent {
     this.message = new Message('', 'assets/images/user.png');
     //console.log(this.message);
     this.messages = [
-      new Message('Welcome to chatbot universe', 'assets/images/bot.png', new Date())
+      // new Message('Welcome to chatbot universe', 'assets/images/bot.png', new Date())
     ];
      console.log(this.messages);
   }
