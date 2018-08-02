@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { DialogflowService } from '@app/services';
-import { MessageListComponent, MessageFormComponent, MessageItemComponent } from '@app/components'
+import { DialogflowService } from '../app/services';
+import { MessageListComponent, MessageFormComponent, MessageItemComponent } from '../app/components'
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { MessageListComponent, MessageFormComponent, MessageItemComponent } from
     HttpModule
   ],
   providers: [
-    DialogflowService
+     DialogflowService
   ],
   bootstrap: [AppComponent]
 })

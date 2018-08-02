@@ -1,25 +1,28 @@
-import { Component, OnInit, Input, AfterViewInit, ViewChild, ViewChildren, QueryList, ElementRef } from '@angular/core';
-import { Message } from '@app/models';
-import { MessageItemComponent } from '@app/components/message-item/message-item.component';
+import { Component, OnInit, Input, AfterViewInit,AfterViewChecked, ViewChild, ViewChildren, QueryList, ElementRef } from '@angular/core';
+import { Message } from '../../models';
+import { MessageItemComponent } from '../message-item/message-item.component';
 
 @Component({
   selector: 'message-list',
   templateUrl: './message-list.component.html',
-  styleUrls: ['./message-list.component.scss']
+  styleUrls: ['./message-list.component.css']
 })
 export class MessageListComponent implements OnInit, AfterViewInit {
 
   @Input('messages')
-  private messages: Message[];
+  public messages: Message[];
 
   @ViewChild('chatlist', { read: ElementRef }) chatList: ElementRef;
   @ViewChildren(MessageItemComponent, { read: ElementRef }) chatItems: QueryList<MessageItemComponent>;
 
-  constructor() { }
+  constructor() {
+    console.log('in message-list constructor.. for messages list', this.messages);
+   }
 
   ngAfterViewInit() {
     this.chatItems.changes.subscribe(elements => {
-      // console.log('messsage list changed: ' + this.messages.length);
+      console.log('viewchild is', this.chatList )
+      console.log('messsage list changed: ' + this.messages.length);
       this.scrollToBottom();
     });
   }
@@ -27,6 +30,7 @@ export class MessageListComponent implements OnInit, AfterViewInit {
   private scrollToBottom(): void {
     try {
       this.chatList.nativeElement.scrollTop = this.chatList.nativeElement.scrollHeight;
+      console.log('scrolling down');
     }
     catch (err) {
       console.log('Could not find the "chatList" element.');
@@ -34,6 +38,7 @@ export class MessageListComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    console.log('in mesage-list component oninit method');
   }
 
 }
