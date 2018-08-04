@@ -1,5 +1,11 @@
-.scrollDown{
-  /* height: 600px; */
+/* #chatlist{
+  /* height: 600px; 
   overflow-y: scroll;
-}
+} */
+.my-css{
+  flex: 1 1 auto;
+  height: 100%;
+  position: relative;
+  overflow: auto;
 
+}

@@ -13,7 +13,7 @@ export class MessageListComponent implements OnInit, AfterViewInit {
   public messages: Message[];
 
   @ViewChild('chatlist', { read: ElementRef }) chatList: ElementRef;
- 
+  @ViewChild('scroll', { read: ElementRef }) scroll: ElementRef;
   @ViewChildren(MessageItemComponent, { read: ElementRef }) chatItems: QueryList<MessageItemComponent>;
 
   constructor() {
@@ -35,8 +35,9 @@ export class MessageListComponent implements OnInit, AfterViewInit {
     //         window.scrollTo(0,0);
     //     }
     // });
-      this.chatList.nativeElement.scrollTop = this.chatList.nativeElement.scrollHeight;
-    window.scrollTo(0, 0);  
+      this.scroll.nativeElement.scrollTop = this.scroll.nativeElement.scrollHeight;
+   // window.scrollTo(0, 0);  
+   console.log("scroll element's height ",this.scroll.nativeElement.scrollHeight);
     console.log('scrolling down');
     }
     catch (err) {

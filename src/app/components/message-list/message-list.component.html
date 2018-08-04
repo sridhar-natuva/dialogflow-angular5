@@ -1,7 +1,7 @@
 
-  <div  #chatlist>
-    <message-item #scrollDown *ngFor="let msg of messages" [message]="msg"></message-item>
-  </div>
+ <div #scroll class="my-css">
+    <message-item #chatlist  *ngFor="let msg of messages" [message]="msg"></message-item>
 
+</div>
 
 

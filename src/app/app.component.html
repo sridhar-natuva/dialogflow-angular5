@@ -17,9 +17,18 @@
     <figure class="avatar">
       <img src="../assets/images/help-desk.png" /></figure>
   </div>
-<message-list class="messages"[messages]="messages" ></message-list>
-<message-form class="message-box" [message]="message" [messages]="messages"></message-form>
-  <!-- <div >
+
+<div #scrollDown class="messages mCustomScrollbar _mCS_1 " >
+
+      <message-list [messages]="messages" ></message-list>
+
+    
+</div>
+<div class="message-box">
+<message-form [message]="message" [messages]="messages"></message-form>
+</div>
+
+<!-- <div >
     <input type="text" class="message-input" id="query" placeholder="Type message...">
     <span class="glyphicon glyphicon-send message-submit"></span>
   </div>     -->

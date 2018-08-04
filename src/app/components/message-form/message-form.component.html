@@ -2,8 +2,8 @@
 
 </mat-form-field> -->
 
-<form #something="ngForm" (ngSubmit)="sendMessage()">
+<form #something="ngForm" (ngSubmit)="sendMessage()" class="message-box" required>
  
   <input placeholder ="please type here "type="text" class="message-input" [(ngModel)]="message.content" [ngModelOptions]="{standalone: true}" required/>
-  <button class="btn btn-success sendbtn" type="submit" >Send</button>
+  <span (click)="sendMessage()" class="glyphicon glyphicon-send message-submit"></span>
 </form>
