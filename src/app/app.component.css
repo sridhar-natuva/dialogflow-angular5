@@ -237,20 +237,7 @@ Messages
   height: 95%;
   width: 100%;
 }
-.messages .message {
-  clear: both;
-  float: left;
-  padding: 6px 10px 7px;
-  border-radius: 10px 10px 10px 0;
-  background: rgb(200, 220, 255);
-  margin: 8px 0;
-  font-size: 13px;
-  line-height: 1.4;
-  margin-left: 35px;
-  position: relative;
-  color: black;
-  font-weight: 600;
-}
+
 .messages .message .timestamp {
   position: absolute;
   bottom: -15px;
