@@ -396,16 +396,7 @@ Messages
 /*--------------------
 Message Box
 --------------------*/
-.message-box {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 40px;
-          flex: 0 1 40px;
-  width: 100%;
-    background: white;
-  padding: 10px;
-  position: relative;
- 
-}
+
 .message-box .message-input {
   background: none;
   border: none;

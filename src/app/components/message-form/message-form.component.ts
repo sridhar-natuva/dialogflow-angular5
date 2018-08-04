@@ -1,6 +1,7 @@
+//import {NgForm} from '@angular/forms';
 import { Component, Input, OnInit } from '@angular/core';
 import { Message } from '../../models';
-import { DialogflowService } from '../../services'
+import { DialogflowService } from '../../services';
 
 
 @Component({
