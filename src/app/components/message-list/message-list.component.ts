@@ -13,12 +13,13 @@ export class MessageListComponent implements OnInit, AfterViewInit {
   public messages: Message[];
 
   @ViewChild('chatlist', { read: ElementRef }) chatList: ElementRef;
+ 
   @ViewChildren(MessageItemComponent, { read: ElementRef }) chatItems: QueryList<MessageItemComponent>;
 
   constructor() {
     console.log('in message-list constructor.. for messages list', this.messages);
    }
-
+   @ViewChild('scrollDown',{read:ElementRef}) scrollDown:ElementRef;
   ngAfterViewInit() {
     this.chatItems.changes.subscribe(elements => {
       console.log('viewchild is', this.chatList )
@@ -29,8 +30,14 @@ export class MessageListComponent implements OnInit, AfterViewInit {
 
   private scrollToBottom(): void {
     try {
+    //   router.events.subscribe((val) => {
+    //     if (val instanceof NavigationEnd){
+    //         window.scrollTo(0,0);
+    //     }
+    // });
       this.chatList.nativeElement.scrollTop = this.chatList.nativeElement.scrollHeight;
-      console.log('scrolling down');
+    window.scrollTo(0, 0);  
+    console.log('scrolling down');
     }
     catch (err) {
       console.log('Could not find the "chatList" element.');

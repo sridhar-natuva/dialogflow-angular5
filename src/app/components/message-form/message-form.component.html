@@ -1,7 +1,7 @@
-
-<input matInput type="text" class="message-input" (keyup.enter)="sendMessage()" [(ngModel)]="message.content"/>
+<div class="form-control">
+<input matInput type="text" class="message-input" (keyup.enter)="sendMessage()" [(ngModel)]="message.content" required/>
   <button  mat-button class="btn btn-success sendbtn" (click)="sendMessage()">Send</button>
-
+</div>
   <!-- <mat-form-field class="example-full-width">
     <input matInput placeholder="Type here.......">
   </mat-form-field> -->
