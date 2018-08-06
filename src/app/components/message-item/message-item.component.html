@@ -1,5 +1,6 @@
-<div #scrollDown class="messages message new">
-    <figure class="avatar">
+<div [ngClass]="message.role=='chatbot' ? 'leftCss' : 'rightCss'"
+#scrollDown class="messages message new">
+    <figure class="avatar" [ngClass]="message.role=='chatbot' ? 'leftAvatar' : 'rightAvatar'">
   <img [src]="message.avatar"/>
   </figure>
   {{message.content}}

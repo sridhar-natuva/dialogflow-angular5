@@ -1,3 +1,20 @@
+.leftCss{
+  float: left;
+}
+
+.rightCss{
+  float: right;
+}
+
+.leftAvatar{
+  left: -32px;
+}
+
+.rightAvatar{
+  right: -48px;
+}
+
+
 .message {
   font-size: 1em;
   font-style: italic;
@@ -21,7 +38,7 @@
   width: 25px;
   margin-right: 20px;
   position: absolute;
-  left: -15px;
+
   bottom: -8px;
 }
 .message.new {
@@ -35,7 +52,7 @@
 
 .messages {
   clear: both;
-  float: left;
+  /* float: left; */
   padding: 6px 10px 7px;
   border-radius: 10px 10px 10px 0;
   background: rgb(200, 220, 255);
@@ -43,6 +60,7 @@
   font-size: 13px;
   line-height: 1.4;
   margin-left: 35px;
+  margin-right: 34px;
   position: relative;
   color: black;
   font-weight: 600;

@@ -6,8 +6,8 @@ import { FormsModule }   from '@angular/forms';
 //import {NgForm} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { DialogflowService } from '../app/services';
-import { MessageListComponent, MessageFormComponent, MessageItemComponent } from '../app/components'
+import { WatsonAPI } from './services';
+import { MessageListComponent, MessageFormComponent, MessageItemComponent } from './components'
 import { MaterialAppModule } from './ngmaterial.module';
 
 
@@ -27,7 +27,7 @@ import { MaterialAppModule } from './ngmaterial.module';
     MaterialAppModule
   ],
   providers: [
-     DialogflowService
+     WatsonAPI
   ],
   bootstrap: [AppComponent]
 })

@@ -17,5 +17,25 @@ export class MessageItemComponent implements OnInit {
 
   ngOnInit() {
   }
+  getColor(role) { 
+    switch (role) {
+      case 'user':
+        return 'right';
+      case 'chatbot':
+        return 'left';
+    }
+  }
+
+  getPosition(role) { 
+    switch (role) {
+      case 'user':
+        return '-33px';
+      case 'chatbot':
+        return '-28px';
+    }
+  }
+
+
+  
 
 }

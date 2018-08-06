@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { DialogflowService } from './dialogflow.service';
+import { WatsonAPI } from './WatsonAPI.service';
 
 describe('DialogflowService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [DialogflowService]
+      providers: [WatsonAPI]
     });
   });
 
-  it('should be created', inject([DialogflowService], (service: DialogflowService) => {
+  it('should be created', inject([WatsonAPI], (service: WatsonAPI) => {
     expect(service).toBeTruthy();
   }));
 });

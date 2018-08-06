@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Message } from '../app/models';
+import { Message } from './models';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +12,10 @@ export class AppComponent {
 
 
   constructor(){
-    this.message = new Message('', 'assets/images/user.png');
+    this.message = new Message('', 'assets/images/user.png',new Date(),'user');
     //console.log(this.message);
     this.messages = [
-       new Message('Hello, How can i help you?', 'assets/images/bot.png', new Date())
+       new Message('Hello, How can i help you?', 'assets/images/bot.png', new Date(),'chatbot')
     ];
      console.log(this.messages);
   }

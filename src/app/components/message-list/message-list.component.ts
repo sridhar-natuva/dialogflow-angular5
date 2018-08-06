@@ -49,4 +49,6 @@ export class MessageListComponent implements OnInit, AfterViewInit {
     console.log('in mesage-list component oninit method');
   }
 
+
+
 }

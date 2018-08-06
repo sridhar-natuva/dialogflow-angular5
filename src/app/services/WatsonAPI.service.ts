@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import { environment } from '../../environments/environment';
 
 @Injectable()
-export class DialogflowService {
+export class WatsonAPI {
 
   private baseURL: string = "https://gvrchat.mybluemix.net/gvrchat";
   //private token: string = environment.token;

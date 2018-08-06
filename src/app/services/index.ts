@@ -1,1 +1,1 @@
-export * from './dialogflow.service';
+export * from './WatsonAPI.service';
