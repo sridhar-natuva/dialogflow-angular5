@@ -9,8 +9,13 @@ import { WatsonAPI } from '../../services';
   templateUrl: './message-form.component.html',
   styleUrls: ['./message-form.component.css']
 })
-export class MessageFormComponent implements OnInit {
 
+
+
+
+
+export class MessageFormComponent implements OnInit {
+public previousContext ='';
   @Input('message')
   private message : Message;
 
@@ -19,13 +24,35 @@ export class MessageFormComponent implements OnInit {
 
    constructor(private WatsonAPI: WatsonAPI) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    let data = {
+      text : '',
+      //lang: 'en',
+      id: '12345',
+      context:''
+    }
+    this.WatsonAPI.getResponse(data).subscribe(res => {
+      this.previousContext = res.context;
+      this.messages.push(
+        new Message(res.text, 'assets/images/bot.png', res.timestamp,'chatbot')
+      );
+      
+    });
+  }
   @ViewChild('input', { read: ElementRef }) chatList: ElementRef;
   public sendMessage(): void {
+    let data = {
+      text : this.message.content,
+      //lang: 'en',
+      id: '12345',
+      context: this.previousContext
+    }
 
     this.message.timestamp = new Date();
     this.messages.push(this.message);
-    this.WatsonAPI.getResponse(this.message.content).subscribe(res => {
+    this.WatsonAPI.getResponse(data).subscribe(res => {
+      this.previousContext = res.context;
+
       this.messages.push(
         new Message(res.text, 'assets/images/bot.png', res.timestamp,'chatbot')
       );
@@ -33,7 +60,7 @@ export class MessageFormComponent implements OnInit {
     });
 
     this.message = new Message('', 'assets/images/user.png',this.message.timestamp,'user');
-    console.log('4th parameter as',this.message.role);
+  //  console.log('4th parameter as',this.message.role);
   }
   
 

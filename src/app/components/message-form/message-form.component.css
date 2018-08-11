@@ -49,7 +49,31 @@
     position: relative;
 }
 
+.message-box .message-submit:hover {
+  color: #0c0a88;
+  cursor: pointer;
+}
 
+.message-box .message-submit {
+  position: absolute;
+  z-index: 1;
+  top: 9px;
+  right: 0px;
+  color: #5554b1;
+  font-size: 18px;
+}
+
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
   .message-input {
     /* background: none;
@@ -62,9 +86,9 @@
     height: auto;
     margin: 0;
     padding-right: 20px; */
-    width:89%;
+    width:96%;
     border: none;
-        border-bottom: 2px solid #56559e;
+        border-bottom: 1px solid #56559e;
       /* font-weight: 600; */
   }
   /* .sendbtn{
