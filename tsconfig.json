@@ -9,8 +9,12 @@
     "experimentalDecorators": true,
     "target": "es5",
     "paths": {
-      "@app/*": ["app/*"],
-      "@env/*": ["environments/*"]
+      "@app/*": [
+        "app/*"
+      ],
+      "@env/*": [
+        "environments/*"
+      ]
     },
     "typeRoots": [
       "node_modules/@types"
@@ -18,6 +22,8 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "module": "es2015",
+    "baseUrl": "./"
   }
 }

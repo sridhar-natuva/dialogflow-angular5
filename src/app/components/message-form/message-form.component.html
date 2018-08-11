@@ -5,5 +5,5 @@
 <form  (ngSubmit)="sendMessage()" class="message-box" required>
  
   <input placeholder ="please type here "type="text" class="message-input" [(ngModel)]="message.content" [ngModelOptions]="{standalone: true}" required/>
-  <span class="glyphicon glyphicon-send message-submit"></span>
+  <span class="glyphicon glyphicon-send message-submit" (click)="sendMessage()"></span>
 </form>
