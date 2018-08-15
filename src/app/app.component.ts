@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Message } from './models';
 import { WatsonAPI } from '../app/services';
+// import { AdService }         from './ad.service';
+import { AdItem }            from './ad-item';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,7 @@ import { WatsonAPI } from '../app/services';
 export class AppComponent{
   public message : Message;
   public messages : Message[];
-
+  result: AdItem[];
   // ngOnInit(){
   //   var  q = '';
   //   WatsonAPI.getResponse(this.message.content).subscribe(res => {
@@ -20,7 +22,8 @@ export class AppComponent{
       
   //   });
   //     }
-  constructor(){
+  constructor(private adService: WatsonAPI){
+    this.result = this.adService.getAds();
     this.message = new Message('', 'assets/images/user.png',new Date(),'user');
     //console.log(this.message);
     this.messages = [
