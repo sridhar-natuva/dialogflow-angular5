@@ -9,11 +9,6 @@ import { AppComponent } from './app.component';
 import { WatsonAPI } from './services';
 import { MessageListComponent, MessageFormComponent, MessageItemComponent } from './components'
 import { MaterialAppModule } from './ngmaterial.module';
-import { TableComponent } from './components/table/table.component';
-import { ListComponent } from './components/list/list.component';
-import { GraphComponent } from './components/graph/graph.component';
-import { AppDirective } from './app.directive';
-import { DynamicComponentService } from './services/dynamic-component.service'
 
 
 
@@ -23,10 +18,6 @@ import { DynamicComponentService } from './services/dynamic-component.service'
     MessageListComponent,
     MessageFormComponent,
     MessageItemComponent,
-    TableComponent,
-    ListComponent,
-    GraphComponent,
-    AppDirective,
   //  NgForm
   ],
   imports: [
@@ -36,10 +27,8 @@ import { DynamicComponentService } from './services/dynamic-component.service'
     MaterialAppModule
   ],
   providers: [
-     WatsonAPI,
-     DynamicComponentService
+     WatsonAPI
   ],
-  // entryComponents: [ TableComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Message } from './models';
-import { WatsonAPI } from './services';
-import { ResultItem } from './Result.Item';
-import { DynamicComponentService } from './services/dynamic-component.service'
+import { WatsonAPI } from '../app/services';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +10,17 @@ import { DynamicComponentService } from './services/dynamic-component.service'
 export class AppComponent{
   public message : Message;
   public messages : Message[];
-  results: ResultItem[];
 
-  ngOnInit() {
-    this.results = this.DynamicComponentService.getComponents();
-  }
-  constructor(private DynamicComponentService: DynamicComponentService){
+  // ngOnInit(){
+  //   var  q = '';
+  //   WatsonAPI.getResponse(this.message.content).subscribe(res => {
+  //     this.messages.push(
+  //       new Message(res.text, 'assets/images/bot.png', res.timestamp,'chatbot')
+  //     );
+      
+  //   });
+  //     }
+  constructor(){
     this.message = new Message('', 'assets/images/user.png',new Date(),'user');
     //console.log(this.message);
     this.messages = [
