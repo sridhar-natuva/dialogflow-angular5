@@ -1,0 +1,17 @@
+<mat-list class="job-ad">
+    <h3 mat-subheader>I found site.count sites. Here is the list,</h3>
+    <mat-list-item *ngFor="let site of data"  (click)="open(site)">
+        <!-- <mat-icon mat-list-icon>folder</mat-icon> -->
+        <p mat-line>
+            siteID {{site.ID}} 
+            Site Name: {{site.name}}
+        </p>
+        <p mat-line>
+            Brand {{site.brand}} 
+            Address {{site.address}}
+        </p>
+
+    </mat-list-item>
+
+
+</mat-list>

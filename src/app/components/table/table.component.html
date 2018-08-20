@@ -1,0 +1,36 @@
+<div class="dynamic-title">
+        <div class="floatleft">
+            <h1></h1>
+            
+        </div>
+        <div class="floatright">
+            <img class="imagewidth" src="../assets/images/insite360.png">
+        </div>
+        <figure class="dynamic-avatar">
+            <img src="../assets/images/help-desk.png" />
+        </figure>
+    </div>
+<mat-table [dataSource]="data" >
+    <ng-container matColumnDef="Position">
+        <mat-header-cell *matHeaderCellDef> fueling Position </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.Position}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="KPI">
+        <mat-header-cell *matHeaderCellDef> KPI</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.KPI}}  </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="State">
+        <mat-header-cell *matHeaderCellDef>state</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.State}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Count">
+        <mat-header-cell *matHeaderCellDef> count </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.Count}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection(row)"></mat-row>
+</mat-table>

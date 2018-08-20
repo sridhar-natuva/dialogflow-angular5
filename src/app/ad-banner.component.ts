@@ -6,12 +6,8 @@ import { AdComponent } from './ad.component';
 
 @Component({
   selector: 'app-result-banner',
-  template: `
-              <div class="ad-banner">
-               
-                <ng-template ad-host></ng-template>
-              </div>
-            `
+  templateUrl:'./ad-banner.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AdBannerComponent implements OnInit, OnDestroy {
   @Input() result: AdItem[];
@@ -23,7 +19,7 @@ export class AdBannerComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.loadComponent();
-    this.getAds();
+    // this.getAds();
   }
 
   ngOnDestroy() {
@@ -43,9 +39,7 @@ export class AdBannerComponent implements OnInit, OnDestroy {
     (<AdComponent>componentRef.instance).data = adItem.data;
   }
 
-  getAds() {
-    this.interval = setInterval(() => {
-      this.loadComponent();
-    }, 3000);
-  }
+  // getAds() {
+    
+  // }
 }

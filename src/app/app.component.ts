@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Message } from './models';
-import { WatsonAPI } from '../app/services';
+import { WatsonAPI } from './services';
 // import { AdService }         from './ad.service';
 import { AdItem }            from './ad-item';
 

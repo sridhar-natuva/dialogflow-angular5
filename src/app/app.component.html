@@ -1,53 +1,30 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<!-- <div  class="chatform">
-  <message-list [messages]="messages"></message-list>
-  <message-form [message]="message" [messages]="messages"></message-form>
-</div> -->
-
-<!--The content below is only a placeholder and can be replaced.-->
 <div class="chat">
   <div class="chat-title">
-  <div class="floatleft">
-    <h1>GVR Chatbot</h1>
-    <h2>GVR Desk</h2>
-  </div>
-  <div class="floatright">
-  <img class="imagewidth" src="../assets/images/insite360.png">
-  </div>
+    <div class="floatleft">
+      <h1>GVR Chatbot</h1>
+      <h2>GVR Desk</h2>
+    </div>
+    <div class="floatright">
+      <img class="imagewidth" src="../assets/images/insite360.png">
+    </div>
     <figure class="avatar">
-      <img src="../assets/images/help-desk.png" /></figure>
+      <img src="../assets/images/help-desk.png" />
+    </figure>
   </div>
 
-<div #scrollDown class="messages mCustomScrollbar _mCS_1 " >
+  <div #scrollDown class="messages mCustomScrollbar _mCS_1 ">
 
-      <message-list [messages]="messages" ></message-list>
+    <message-list [messages]="messages"></message-list>
 
-    
+
+  </div>
+  <div class="message-box">
+    <message-form [message]="message" [messages]="messages"></message-form>
+  </div>
 </div>
-<div class="message-box">
-<message-form [message]="message" [messages]="messages"></message-form>
-</div>
-</div>
 
-<div class= "dynamicDiv">
-    <div class="chat-title">
-  <div class="floatleft">
-    <h1>fdsfdf</h1>
-    <h2>GVR Desk</h2>
-  </div>
-  <div class="floatright">
-  <img class="imagewidth" src="../assets/images/insite360.png">
-  </div>
-    <figure class="avatar">
-      <img src="../assets/images/help-desk.png" /></figure>
-  </div>
+<div class="dynamicDiv">
+
   <app-result-banner [result]="result"></app-result-banner>
 </div>
-
-<!-- <div >
-    <input type="text" class="message-input" id="query" placeholder="Type message...">
-    <span class="glyphicon glyphicon-send message-submit"></span>
-  </div>     -->
-
-
-

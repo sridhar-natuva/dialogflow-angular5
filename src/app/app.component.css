@@ -26,12 +26,12 @@ image {
 
 .dynamicDiv{
   position: absolute;
-  top: 25%;
+  top: 50%;
   left: 75%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  /* width: 530px; */
-  /* height: 80vh; */
+  width: 530px; 
+  /* height: 80vh;  */
   max-height: 500px;
   z-index: 2;
   overflow: hidden;
@@ -42,7 +42,38 @@ image {
   justify-content: space-between;
   flex-direction: column;
 }
+.dynamic-title{
+  flex: 0 1 45px;
+  position: relative;
+  z-index: 2;
+  background: #075BA0;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 10px 10px 10px 50px;
+  height: 50px;
+}
+.dynamic-avatar {
+  position: absolute;
+  z-index: 1;
+  top: 8px;
+  left: 9px;
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.24);
+  background: white;
+}
 
+
+.mat-list {
+    padding-top: 8px;
+    overscroll-behavior-y: auto;
+    display: block;
+}
 .mCustomScrollBox:before {
 	
 	    content: ' ';

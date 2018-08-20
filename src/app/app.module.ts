@@ -9,9 +9,9 @@ import { AppComponent } from './app.component';
 import { WatsonAPI } from './services';
 import { MessageListComponent, MessageFormComponent, MessageItemComponent } from './components'
 import { MaterialAppModule } from './ngmaterial.module';
-import { HeroJobAdComponent }   from './hero-job-ad.component';
+import { ListComponent }   from './components/list/list.component';
 import { AdBannerComponent }    from './ad-banner.component';
-import { HeroProfileComponent } from './hero-profile.component';
+import { TableComponent } from './components/table/table.component';
 import { AdDirective }          from './ad.directive';
 
 
@@ -23,8 +23,8 @@ import { AdDirective }          from './ad.directive';
     MessageFormComponent,
     MessageItemComponent,
     AdBannerComponent,
-    HeroJobAdComponent,
-    HeroProfileComponent,
+    ListComponent,
+    TableComponent,
     AdDirective
   //  NgForm
   ],
@@ -37,7 +37,7 @@ import { AdDirective }          from './ad.directive';
   providers: [
      WatsonAPI,
   ],
-  entryComponents: [ HeroJobAdComponent, HeroProfileComponent ],
+  entryComponents: [ ListComponent, TableComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
