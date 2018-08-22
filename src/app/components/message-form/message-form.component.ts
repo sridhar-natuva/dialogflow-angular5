@@ -2,6 +2,7 @@
 import { Component, Input, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Message } from '../../models';
 import { WatsonAPI } from '../../services';
+import { AdBannerComponent } from '../../ad-banner.component'
 
 
 @Component({
@@ -15,6 +16,7 @@ import { WatsonAPI } from '../../services';
 
 
 export class MessageFormComponent implements OnInit {
+  public loadComponent : AdBannerComponent;
 public previousContext ='';
   @Input('message')
   private message : Message;
@@ -52,7 +54,9 @@ public previousContext ='';
     this.messages.push(this.message);
     this.WatsonAPI.getResponse(data).subscribe(res => {
       this.previousContext = res.context;
-
+      // if(res.result.type == 'list'){
+      //   this.loadComponent.loadComponent();
+      // }
       this.messages.push(
         new Message(res.text, 'assets/images/bot.png', res.timestamp,'chatbot')
       );

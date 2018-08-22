@@ -7,6 +7,8 @@ import { environment } from '../../environments/environment';
  import { ListComponent }   from '../components/list/list.component';
 import { TableComponent } from '../components/table/table.component';
 import { AdItem } from '../ad-item';
+import { ImageComponent } from "../components/image/image.component";
+import { GraphComponent } from "../components/graph/graph.component";
 
 @Injectable()
 export class WatsonAPI {
@@ -85,95 +87,76 @@ export class WatsonAPI {
       id: 689,
       text: 'SiteID 826010 is a Gilbarco station located in 7300 West Friendly Avenue, Greensboro, phone: 3365478899,is showing error/warning/down status due to:',
       context: {},
-      result: {
-        type: 'list',
-        data: [
-          { ID: 846779, name: 'BO TEST SITE', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
-          { ID: 1, name: 'site name', brand: 'brand name', address: 'address goes here' },
-          { ID: 1, name: 'site name', brand: 'brand name', address: 'address goes here' },
-          { ID: 1, name: 'site name', brand: 'brand name', address: 'address goes here' },
-          { ID: 1, name: 'site name', brand: 'brand name', address: 'address goes here' },
-          { ID: 1, name: 'site name', brand: 'brand name', address: 'address goes here' },
-          { ID: 1, name: 'site name', brand: 'brand name', address: 'address goes here' },
-          { ID: 1, name: 'site name', brand: 'brand name', address: 'address goes here' },
-          { ID: 1, name: 'site name', brand: 'brand name', address: 'address goes here' },
-          { ID: 1, name: 'site name', brand: 'brand name', address: 'address goes here' },
-          { ID: 1, name: 'site name', brand: 'brand name', address: 'address goes here' },
-          { ID: 1, name: 'site name', brand: 'brand name', address: 'address goes here' },
-          { ID: 1, name: 'site name', brand: 'brand name', address: 'address goes here' },
-          { ID: 1, name: 'site name', brand: 'brand name', address: 'address goes here' },
+      
+      
+      // result: {
+      //   type: 'list',
+      //   data: [
+      //     { ID: 846779, name: 'BO TEST SITE', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
+      //     { ID: 1, name: 'site name', brand: 'brand name', address: 'address goes here' },
+      //     { ID: 1, name: 'site name', brand: 'brand name', address: 'address goes here' },
 
           
-        ]
-      }
+      //   ]
+      // }
+
+
+
       // result: {
       //   type: 'table',
       //   data: [
-      //     { Position: 1, KPI: 'KPI value', State: 'ab', Count: 2 },
-      //     { Position: 1, KPI: 'KPI value', State: 'cd', Count: 3 },
-      //     { Position: 1, KPI: 'KPI value', State: 'ab', Count: 2 },
-      //     { Position: 1, KPI: 'KPI value', State: 'cd', Count: 3 },
-      //     { Position: 1, KPI: 'KPI value', State: 'ab', Count: 2 },
-      //     { Position: 1, KPI: 'KPI value', State: 'cd', Count: 3 },
-      //     { Position: 1, KPI: 'KPI value', State: 'ef', Count: 2 },
       //     { Position: 1, KPI: 'KPI value', State: 'gh', Count: 2 },
       //     { Position: 1, KPI: 'KPI value', State: 'ij', Count: 4 }
       //   ]
       // }
+      
+      
+      
+      
+      // result: {
+      //   type: 'image',
+      //   data: [
+      //     {source:'../../assets/images/image.jpg', alt:'Description for Image', title:'Title of the image'},
+          
+      //   ]
+      // }
+
+
+      result: {
+        type: 'graph',
+        data: [
+          {
+              label: 'First Dataset',
+              data: [65, 59, 80, 81, 56, 55, 40],
+              fill: false,
+              borderColor: '#4bc0c0'
+          },
+          {
+              label: 'Second Dataset',
+              data: [28, 48, 40, 19, 86, 27, 90],
+              fill: false,
+              borderColor: '#565656'
+          }
+      ]
+      }
+
+
     }
     if(sample.result.type == 'table'){
       return   [new AdItem(TableComponent, sample.result.data)]
       
     }else if(sample.result.type == 'list'){
       return   [new AdItem(ListComponent, sample.result.data)]
+
+    }else if(sample.result.type == 'image'){
+      return   [new AdItem(ImageComponent, sample.result.data)]
+      
+    }else if(sample.result.type == 'graph'){
+      return   [new AdItem(GraphComponent, sample.result.data)]
+      
     }else{
       return sample
     }
 
   }
-  //   return [
-  //     // new AdItem(HeroProfileComponent, 
-  //     //   // {
-  //     //   // name: 'Bombasto',
-  //     //   //  bio: 'Brave as they come'
-  //     //   // }
-  //     //   {
-  //     //     type :'list',
-  //     //     title :'site 12345 status',
-  //     //      data :  ['\n Dispenser ENCORE 17 has device M5 is showing down on fueling position 17. \n overall-system showing status down. \n Dispenser ENCORE 17 has device M5 is showing down on fueling position 18. \ overall-system showing status down'
-  //     //      ]}
-  //     //     ),
-
-  //     // new AdItem(HeroProfileComponent, {
-  //     //   name: 'Dr IQ',
-  //     //    bio: 'Smart as they come'
-  //     //   }),
-
-  //     // new AdItem(HeroProfileComponent,   {
-  //     //   type :'list',
-  //     //   title : 'sites found',
-  //     //   data : 
-  //     //   [ SiteID: 846779 Site Name: BO TEST SITE 
-  //     //     \nBrand: Gilbarco Phone Number: 3365470001 
-  //     //     \nAddress: 147 MAIN STREET, GREENSBORO, NC, 27453, 
-
-  //     //     846744 Site Name: DPG Production Site 
-  //     //     \nBrand: Gilbarco Phone Number: 3365470001 
-  //     //     \nAddress: 7300 West Friendly Ave, Greensboro, NC, 27420 
-  //     //     \n <red>This site is showing reported issues.</red>
-  //     //   ]
-  //     // }),
-
-  //     new AdItem(TableComponent,
-  //       [
-  //         { position: 1, KPI: 'John', state: 'Doe', count: 2 },
-  //         { position: 1, KPI: 'Mike', state: 'Hussey', count: 3 },
-  //         { position: 1, KPI: 'Ricky', state: 'Hans', count: 2 },
-  //         { position: 1, KPI: 'Martin', state: 'Kos', count: 2 },
-  //         { position: 1, KPI: 'Tom', state: 'Paisa', count: 4 }
-  //       ]
-  //     ),
-  //   ];
-  // }
-
 }

@@ -24,6 +24,7 @@ export class AppComponent{
   //     }
   constructor(private adService: WatsonAPI){
     this.result = this.adService.getAds();
+    console.log('from app',this.result);
     this.message = new Message('', 'assets/images/user.png',new Date(),'user');
     //console.log(this.message);
     this.messages = [
