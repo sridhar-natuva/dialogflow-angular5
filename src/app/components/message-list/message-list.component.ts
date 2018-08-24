@@ -46,7 +46,7 @@ export class MessageListComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    console.log('in mesage-list component oninit method');
+   // console.log('in mesage-list component oninit method');
   }
 
 

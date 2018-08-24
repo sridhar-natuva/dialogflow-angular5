@@ -10,6 +10,8 @@ import { Container } from '@angular/compiler/src/i18n/i18n_ast';
   styleUrls: ['../../app.component.css']
 })
 export class ListComponent implements AdComponent , OnInit {
+  public json_data : any;
+  show: boolean = true;
    public previousContext ='';
   private WatsonAPI : WatsonAPI;
   public entries: any[] = [];
@@ -27,47 +29,22 @@ constructor() { }
 
 ngOnInit(){
   
-console.log('json data for list', this.data);
- 
+//console.log('json data for list', this.data);
+//console.log('i from nginit', i);
+
 console.log('temp', this.entries);
+//this.json_data.currentMessage.subscribe(recieved_json => i = recieved_json);
+console.log('json_data from init',this.json_data);
   for(var i=0; i<=this.data.length;i++){
     this.entries.push( (Object.entries(this.data[i])));
   }
-  //this.json_data.currentMessage.subscribe(message => i = message)
-
+  this.json_data.currentMessage.subscribe(recieved_json => i = recieved_json);
+//console.log('json_data from init',this.json_data);
 }
 
 
-public open(site){
- // this.json_data.changeMessage.subscribe(i);
-  console.log("seleccted site from list", site);
-
-  let data = {
-    text : 'site '+site.ID,
-    //lang: 'en',
-    id: '12345',
-    context: this.previousContext
-  }
-
-  //this.message.timestamp = new Date();
-  //this.message = new Message('site '+site.ID , 'assets/images/user.png',new Date(),'user');
-  //this.messages.push(this.message);
-  // this.WatsonAPI.getResponse(data).subscribe(res => {
-  //   this.previousContext = res.context;
-
-  //   this.messages.push(
-  //     new Message(res.text, 'assets/images/bot.png',new Date(),'chatbot')
-  //   );
-    
-  // });
+public open(i){
+  console.log('json_data on open method',this.json_data)
+  console.log("seleccted site from list", i);
 }
-
 }
-
-// export interface sites {
-//   ID: number;
-//   name: string;
-//   brand: string;
-//   address: number;
-  
-// }

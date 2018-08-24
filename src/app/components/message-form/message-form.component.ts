@@ -41,7 +41,7 @@ private recieved_json ;
       );
       
     });
-    this.json_data.currentMessage.subscribe(message => this.recieved_json = message)
+    this.json_data.currentMessage.subscribe(recieved_json => this.recieved_json = recieved_json);
     
   }
   @ViewChild('input', { read: ElementRef }) chatList: ElementRef;

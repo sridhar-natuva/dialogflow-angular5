@@ -9,8 +9,8 @@ export class DataService {
 
   constructor() { }
 
-  changeMessage(message: string) {
-    this.messageSource.next(message)
+  changeMessage(recieved_json: string) {
+    this.messageSource.next(recieved_json)
   }
 
 }

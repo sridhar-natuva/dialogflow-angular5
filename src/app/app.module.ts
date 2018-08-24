@@ -19,6 +19,7 @@ import { TableComponent } from './components/table/table.component';
 import { ImageComponent } from './components/image/image.component'
 import { GraphComponent } from "./components/graph/graph.component";
 import { AdDirective }          from './ad.directive';
+import { DataService } from './services/data.service';
 
 
 
@@ -50,6 +51,7 @@ import { AdDirective }          from './ad.directive';
   ],
   providers: [
      WatsonAPI,
+     DataService
   ],
   entryComponents: [ ListComponent, TableComponent ,ImageComponent ,GraphComponent ],
   bootstrap: [AppComponent]
