@@ -8,18 +8,18 @@ import { AdComponent }       from '../../ad.component';
   
 })
 export class TableComponent implements AdComponent {
-  @Input() data: table[];
+  @Input() data: any[];
 
-  displayedColumns:string[] = ['Position', 'KPI', 'State', 'Count'];
+  // displayedColumns:string[] = ['Position', 'KPI', 'State', 'Count'];
   
   // dataSource = new MatTableDataSource(this.data);
 }
 
 
 
-export interface table {
-  position: number;
-  KPI: string;
-  state: string;
-  count: number;
-}
+// export interface table {
+//   position: number;
+//   KPI: string;
+//   state: string;
+//   count: number;
+// }

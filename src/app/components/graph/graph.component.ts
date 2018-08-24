@@ -5,7 +5,7 @@ import {GalleriaModule} from 'primeng/galleria';
 
 @Component({
   template: `
-  <p-chart type="line"></p-chart>
+  <p-chart type="line" [data]='data'  ></p-chart>
   `,
   styleUrls: ['../../app.component.css']
   

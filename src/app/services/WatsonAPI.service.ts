@@ -75,8 +75,7 @@ export class WatsonAPI {
     }
 
     if(sample.result.type == 'table'){
-      return       new AdItem(TableComponent, sample.result.data
-      )
+      return       new AdItem(TableComponent, sample.result.data)
     }
 
 
@@ -89,16 +88,29 @@ export class WatsonAPI {
       context: {},
       
       
-      // result: {
-      //   type: 'list',
-      //   data: [
-      //     { ID: 846779, name: 'BO TEST SITE', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
-      //     { ID: 1, name: 'site name', brand: 'brand name', address: 'address goes here' },
-      //     { ID: 1, name: 'site name', brand: 'brand name', address: 'address goes here' },
+      result: {
+        type: 'list',
+        data: [
+          { key1: "SiteId: 846779", key2: 'Name: BO TEST SITE' , new_line: true, phone:'3432423', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
+          { ID: 344231, name: 'gilabrco site', brand: 'indian oil', address: 'main road' },
+          { ID: 78767, name: 'TEST SITE 2',phone:'65453', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
+          { ID: 846779, name: 'BO TEST SITE',phone:'3432423', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
+          { ID: 344231, name: 'gilabrco site', brand: 'indian oil', address: 'main road' },
+          { ID: 78767, name: 'TEST SITE 2',phone:'65453', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
+          { ID: 846779, name: 'BO TEST SITE',phone:'3432423', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
+          { ID: 344231, name: 'gilabrco site', brand: 'indian oil', address: 'main road' },
+          { ID: 78767, name: 'TEST SITE 2',phone:'65453', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
+          { ID: 846779, name: 'BO TEST SITE',phone:'3432423', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
+          { ID: 344231, name: 'gilabrco site', brand: 'indian oil', address: 'main road' },
+          { ID: 78767, name: 'TEST SITE 2',phone:'65453', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
+          { ID: 846779, name: 'BO TEST SITE',phone:'3432423', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
+          { ID: 344231, name: 'gilabrco site', brand: 'indian oil', address: 'main road' },
+          { ID: 78767, name: 'TEST SITE 2',phone:'65453', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
+          
 
           
-      //   ]
-      // }
+        ]
+      }
 
 
 
@@ -122,23 +134,26 @@ export class WatsonAPI {
       // }
 
 
-      result: {
-        type: 'graph',
-        data: [
-          {
-              label: 'First Dataset',
-              data: [65, 59, 80, 81, 56, 55, 40],
-              fill: false,
-              borderColor: '#4bc0c0'
-          },
-          {
-              label: 'Second Dataset',
-              data: [28, 48, 40, 19, 86, 27, 90],
-              fill: false,
-              borderColor: '#565656'
-          }
-      ]
-      }
+      // result: {
+      //   type: 'graph',
+      //   data: {
+      //     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      //     datasets: [
+      //         {
+      //             label: 'First Dataset',
+      //             data: [65, 59, 80, 81, 56, 55, 40],
+      //             fill: false,
+      //             borderColor: '#4bc0c0'
+      //         },
+      //         {
+      //             label: 'Second Dataset',
+      //             data: [28, 48, 40, 19, 86, 27, 90],
+      //             fill: false,
+      //             borderColor: '#565656'
+      //         }
+      //     ]
+      // }
+      // }
 
 
     }

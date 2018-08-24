@@ -12,7 +12,8 @@ import { AdItem }            from './ad-item';
 export class AppComponent{
   public message : Message;
   public messages : Message[];
-  result: AdItem[];
+  result;
+  temp;
   // ngOnInit(){
   //   var  q = '';
   //   WatsonAPI.getResponse(this.message.content).subscribe(res => {
@@ -23,7 +24,8 @@ export class AppComponent{
   //   });
   //     }
   constructor(private adService: WatsonAPI){
-    this.result = this.adService.getAds();
+    this.result= this.adService.getAds();
+    //this.result = this.temp.result;
     console.log('from app',this.result);
     this.message = new Message('', 'assets/images/user.png',new Date(),'user');
     //console.log(this.message);

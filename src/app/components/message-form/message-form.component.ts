@@ -3,7 +3,7 @@ import { Component, Input, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Message } from '../../models';
 import { WatsonAPI } from '../../services';
 import { AdBannerComponent } from '../../ad-banner.component'
-
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'message-form',
@@ -18,13 +18,14 @@ import { AdBannerComponent } from '../../ad-banner.component'
 export class MessageFormComponent implements OnInit {
   public loadComponent : AdBannerComponent;
 public previousContext ='';
+private recieved_json ;
   @Input('message')
   private message : Message;
 
   @Input('messages')
   private messages : Message[];
 
-   constructor(private WatsonAPI: WatsonAPI) { }
+   constructor(private WatsonAPI: WatsonAPI , private json_data : DataService) { }
 
   ngOnInit() {
     let data = {
@@ -40,6 +41,8 @@ public previousContext ='';
       );
       
     });
+    this.json_data.currentMessage.subscribe(message => this.recieved_json = message)
+    
   }
   @ViewChild('input', { read: ElementRef }) chatList: ElementRef;
   public sendMessage(): void {

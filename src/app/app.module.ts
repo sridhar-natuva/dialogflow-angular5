@@ -8,7 +8,7 @@ import { HttpModule } from '@angular/http';
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 import { MenuItem}  from 'primeng/api';                 //api
 import {GalleriaModule} from 'primeng/galleria';
-import {ChartModule} from 'primeng/primeng';
+import {ChartModule, SharedModule} from 'primeng/primeng';
 import { AppComponent } from './app.component';
 import { WatsonAPI } from './services';
 import { MessageListComponent, MessageFormComponent, MessageItemComponent } from './components'
@@ -16,8 +16,8 @@ import { MaterialAppModule } from './ngmaterial.module';
 import { ListComponent }   from './components/list/list.component';
 import { AdBannerComponent }    from './ad-banner.component';
 import { TableComponent } from './components/table/table.component';
-import { ImageComponent } from '../app/components/image/image.component'
-import { GraphComponent } from "../app/components/graph/graph.component";
+import { ImageComponent } from './components/image/image.component'
+import { GraphComponent } from "./components/graph/graph.component";
 import { AdDirective }          from './ad.directive';
 
 
@@ -45,7 +45,8 @@ import { AdDirective }          from './ad.directive';
     HttpModule,
     MaterialAppModule,
     GalleriaModule,
-    ChartModule
+    ChartModule,
+    SharedModule
   ],
   providers: [
      WatsonAPI,
