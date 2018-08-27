@@ -47,7 +47,10 @@ import { DataService } from './services/data.service';
     MaterialAppModule,
     GalleriaModule,
     ChartModule,
-    SharedModule
+    SharedModule,
+    
+    
+    
   ],
   providers: [
      WatsonAPI,

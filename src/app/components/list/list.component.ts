@@ -3,7 +3,7 @@ import { Message } from '../../models';
 import { WatsonAPI } from '../../services/WatsonAPI.service'
 import { AdComponent }      from '../../ad.component';
 import { Container } from '@angular/compiler/src/i18n/i18n_ast';
-//import { DataService } from '../../services/data.service';
+import { DataService } from '../../services/data.service';
 //import { fromEvent } from 'rxjs';
 
 @Component({
@@ -26,26 +26,25 @@ export class ListComponent implements AdComponent , OnInit {
   @Input('messages')
   private messages : Message[];
 
-// @ViewChild('dynamicTemplate', { read : ViewContainerRef}) Container;
-  
-constructor() { }
+  constructor(private DataService: DataService ) { }
 
 ngOnInit(){
-  
-//console.log('json data for list', this.data);
-//console.log('i from nginit', i);
-
 console.log('temp', this.entries);
 //this.json_data.currentMessage.subscribe(recieved_json => i = recieved_json);
 console.log('json_data from init',this.json_data);
   for(var i=0; i<=this.data.length;i++){
     this.entries.push( (Object.entries(this.data[i])));
   }
-  this.json_data.currentMessage.subscribe(recieved_json => i = recieved_json);
+  //this.json_data.currentMessage.subscribe(recieved_json => i = recieved_json);
 //console.log('json_data from init',this.json_data);
 }
+
+transferData(i): void {
+      // send message to subscribers via observable subject
+      this.DataService.emitter(i);
+  }
 public checkElement(array,str)
-    {        
+  {        
       var item;
     //  console.log('str value', str);
       for (var i = 0; i < array.length; i++) {
@@ -56,17 +55,6 @@ public checkElement(array,str)
           //console.log('');
         }
       }
-      
-      return false;
+  return false;
   }
-    @ViewChild('content',{read:ElementRef}) content:ElementRef;
-    
-
-    // Create an Observable that will publish mouse movements
-   // const mouseClick = fromEvent(content, 'mouseclick');
-
-    public open(i){
-  console.log('json_data on open method',this.json_data)
-  console.log("seleccted site from list", i);
-}
 }
