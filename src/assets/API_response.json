@@ -1,0 +1,18 @@
+{
+    "id": 689,
+    "text": "SiteID 826010 is a Gilbarco station located in 7300 West Friendly Avenue, Greensboro, phone: 3365478899,is showing error/warning/down status due to:",
+    "context": {},
+    "result": {
+        "type": "list",
+        "data": [
+            {
+                "key1": "SiteId: 846779",
+                "key2": "Name: BO TEST SITE",
+                "new_line": true,
+                "phone": 3432423,
+                "brand": "Gilbarco",
+                "address": " 147 MAIN STREET, GREENSBORO, NC"
+            }
+        ]
+    }
+}

@@ -1,5 +1,5 @@
 import { Injectable, OnInit, Input } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { HttpClient } from '@angular//common/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import { Message } from '../models';
@@ -10,49 +10,24 @@ import { AdItem } from '../ad-item';
 import { ImageComponent } from "../components/image/image.component";
 import { GraphComponent } from "../components/graph/graph.component";
 
+interface watsonInput {
+  id :number,
+  text : string,
+  context : object
+}
+
 @Injectable()
 export class WatsonAPI {
 
-  // @Input('messages')
-  // private messages : Message[];
-
-  // ngOnInit() {
-  //   this.getResponse('').subscribe(res => {
-  //     this.messages.push(
-  //       new Message(res.text, 'assets/images/bot.png', res.timestamp,'chatbot')
-  //     );
-
-  //   });
-  // }
-
+  public API_response11:object;
   private baseURL: string = "https://gvrchat.mybluemix.net/gvrchat";
-  //private token: string = environment.token;
+ // configUrl = '../assets/API_response.json';
+  constructor(private http: HttpClient) { }
 
-  constructor(private http: Http) { }
 
+  public getResponse(data: object){
+    return this.http.post<watsonInput>(`${this.baseURL}`, data)
 
-  public getResponse(data: object) {
-    // let data = {
-    //   text : '',
-    //   //lang: 'en',
-    //   id: '12345',
-    //   context:''
-    // }
-
-    // console.log('input to watson', data.text);
-    return this.http
-      .post(`${this.baseURL}`, data)
-      .map(res => {
-        var body = res.json();
-        // if(body.result.type == 'table'){
-        //   this.getTable(body.result);
-        // }
-        console.log(body);
-        
-
-        return body
-
-      })
   }
 
   getTable(object) {
@@ -93,19 +68,19 @@ export class WatsonAPI {
         data: [
           { key1: "SiteId: 846779", key2: 'Name: BO TEST SITE' , new_line: true, phone:'3432423', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
           { ID: 344231, name: 'gilabrco site', brand: 'indian oil', address: 'main road' },
-          { ID: 78767, name: 'TEST SITE 2',phone:'65453', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
-          { ID: 846779, name: 'BO TEST SITE',phone:'3432423', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
-          { ID: 344231, name: 'gilabrco site', brand: 'indian oil', address: 'main road' },
-          { ID: 78767, name: 'TEST SITE 2',phone:'65453', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
-          { ID: 846779, name: 'BO TEST SITE',phone:'3432423', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
-          { ID: 344231, name: 'gilabrco site', brand: 'indian oil', address: 'main road' },
-          { ID: 78767, name: 'TEST SITE 2',phone:'65453', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
-          { ID: 846779, name: 'BO TEST SITE',phone:'3432423', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
-          { ID: 344231, name: 'gilabrco site', brand: 'indian oil', address: 'main road' },
-          { ID: 78767, name: 'TEST SITE 2',phone:'65453', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
-          { ID: 846779, name: 'BO TEST SITE',phone:'3432423', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
-          { ID: 344231, name: 'gilabrco site', brand: 'indian oil', address: 'main road' },
-          { ID: 78767, name: 'TEST SITE 2',phone:'65453', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
+          // { ID: 78767, name: 'TEST SITE 2',phone:'65453', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
+          // { ID: 846779, name: 'BO TEST SITE',phone:'3432423', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
+          // { ID: 344231, name: 'gilabrco site', brand: 'indian oil', address: 'main road' },
+          // { ID: 78767, name: 'TEST SITE 2',phone:'65453', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
+          // { ID: 846779, name: 'BO TEST SITE',phone:'3432423', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
+          // { ID: 344231, name: 'gilabrco site', brand: 'indian oil', address: 'main road' },
+          // { ID: 78767, name: 'TEST SITE 2',phone:'65453', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
+          // { ID: 846779, name: 'BO TEST SITE',phone:'3432423', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
+          // { ID: 344231, name: 'gilabrco site', brand: 'indian oil', address: 'main road' },
+          // { ID: 78767, name: 'TEST SITE 2',phone:'65453', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
+          // { ID: 846779, name: 'BO TEST SITE',phone:'3432423', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
+          // { ID: 344231, name: 'gilabrco site', brand: 'indian oil', address: 'main road' },
+          // { ID: 78767, name: 'TEST SITE 2',phone:'65453', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
           
 
           

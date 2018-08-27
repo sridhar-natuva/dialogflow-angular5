@@ -11,13 +11,9 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./message-form.component.css']
 })
 
-
-
-
-
 export class MessageFormComponent implements OnInit {
   public loadComponent : AdBannerComponent;
-public previousContext ='';
+public previousContext = {};
 private recieved_json ;
   @Input('message')
   private message : Message;
@@ -34,14 +30,14 @@ private recieved_json ;
       id: '12345',
       context:''
     }
-    this.WatsonAPI.getResponse(data).subscribe(res => {
+    this.WatsonAPI.getResponse(data).subscribe(res =>{
+      console.log("we subscribed watson from message-form component",res);
       this.previousContext = res.context;
       this.messages.push(
-        new Message(res.text, 'assets/images/bot.png', res.timestamp,'chatbot')
+        new Message(res.text, 'assets/images/bot.png', new Date(),'chatbot')
       );
-      
-    });
-    this.json_data.currentMessage.subscribe(recieved_json => this.recieved_json = recieved_json);
+    })
+   // this.json_data.currentMessage.subscribe(recieved_json => this.recieved_json = recieved_json);
     
   }
   @ViewChild('input', { read: ElementRef }) chatList: ElementRef;
@@ -56,18 +52,17 @@ private recieved_json ;
     this.message.timestamp = new Date();
     this.messages.push(this.message);
     this.WatsonAPI.getResponse(data).subscribe(res => {
-      this.previousContext = res.context;
+    this.previousContext = res.context;
       // if(res.result.type == 'list'){
       //   this.loadComponent.loadComponent();
       // }
       this.messages.push(
-        new Message(res.text, 'assets/images/bot.png', res.timestamp,'chatbot')
+        new Message(res.text, 'assets/images/bot.png', new Date(),'chatbot')
       );
       
     });
 
     this.message = new Message('', 'assets/images/user.png',this.message.timestamp,'user');
-  //  console.log('4th parameter as',this.message.role);
   }
   
 

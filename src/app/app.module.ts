@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { FormsModule }   from '@angular/forms';
 //import {NgForm} from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 import { MenuItem}  from 'primeng/api';                 //api
 import {GalleriaModule} from 'primeng/galleria';
@@ -43,7 +43,7 @@ import { DataService } from './services/data.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     MaterialAppModule,
     GalleriaModule,
     ChartModule,
