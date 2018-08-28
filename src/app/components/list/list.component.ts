@@ -8,16 +8,17 @@ import { DataService } from '../../services/data.service';
 
 @Component({
   templateUrl: './list.component.html',
-  styleUrls: ['../../app.component.css']
+  styleUrls: ['../../app.component.css','./list.component.css']
 })
 
 //const content = document.getElementById('content');
 export class ListComponent implements AdComponent , OnInit {
-  public json_data : any;
+  public keys : any[] = [];
   show: boolean = true;
   public previousContext ='';
   private WatsonAPI : WatsonAPI;
   public entries: any[] = [];
+  public entries2: any[] = [];
   @Input() data: any;
   
   @Input('message')
@@ -29,21 +30,53 @@ export class ListComponent implements AdComponent , OnInit {
   constructor(private DataService: DataService ) { }
 
 ngOnInit(){
-console.log('temp', this.entries);
+//console.log('temp', this.entries);
 //this.json_data.currentMessage.subscribe(recieved_json => i = recieved_json);
-console.log('json_data from init',this.json_data);
-  for(var i=0; i<=this.data.length;i++){
-    this.entries.push( (Object.entries(this.data[i])));
+  for(var i=0; i<this.data.length;i++){
+    
+    this.keys = Object.keys(this.data[i]);
+    var values = Object.values(this.data[i]);
+    
+    
+    this.entries.push( values );
+
+    
+   // console.log('keys are', this.keys);
+   // console.log('values are', values);
+    
+    
+    // for(var j=0; j)
+    // if(this.keys[i].includes("userinput")){
+    //   console.log("your in userinput if condition");
+      
+      
+    // }else{
+    //   this.entries2.push(values);
+    // }
+    // console.log("entries2 from for loop",this.entries2);
+    //this.entries.push( (Object.entries(this.data[i])));
   }
   //this.json_data.currentMessage.subscribe(recieved_json => i = recieved_json);
 //console.log('json_data from init',this.json_data);
 }
+callX(x): string {
+  var tempVal = "";
+  for(var i=1;i<x.length;i++){
+    tempVal = tempVal + x[i];
 
+  }
+  return tempVal;
+}
 transferData(i): void {
       // send message to subscribers via observable subject
-     // console.log(i[3][1]);
-      this.DataService.emitter(i[3][1]);
+      console.log('datatransfer obj', i);
+       if(this.keys.includes('userinput')){
+         console.log("user_input is present");
+       }
+      console.log("message to dataservice",i[0]);
+      this.DataService.emitter(i[0]);
   }
+  
 public checkElement(array,str)
   {        
       var item;

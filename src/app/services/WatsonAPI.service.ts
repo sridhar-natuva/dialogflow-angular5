@@ -66,22 +66,10 @@ export class WatsonAPI {
       result: {
         type: 'list',
         data: [
-          { key1: "SiteId: 846779  Name: BO TEST SITE brand: Gilbarco", key2 :" , address: '147 MAIN STREET, GREENSBORO, NC",key3:"phone:3432423",key4:"this site is showing reported isses",userinput:"site id 434234" },
-          { key1: "SiteId: 846779  Name: BO TEST SITE brand: Gilbarco", key2 :" , address: '147 MAIN STREET, GREENSBORO, NC",key3:"phone:3432423",userinput:"site id 434234" },
-          { key1: "SiteId: 846779  Name: BO TEST SITE brand: Gilbarco", key2 :" , address: '147 MAIN STREET, GREENSBORO, NC",key3:"phone:3432423",userinput:"site id 434234" },
-          // { ID: 78767, name: 'TEST SITE 2',phone:'65453', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
-          // { ID: 846779, name: 'BO TEST SITE',phone:'3432423', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
-          // { ID: 344231, name: 'gilabrco site', brand: 'indian oil', address: 'main road' },
-          // { ID: 78767, name: 'TEST SITE 2',phone:'65453', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
-          // { ID: 846779, name: 'BO TEST SITE',phone:'3432423', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
-          // { ID: 344231, name: 'gilabrco site', brand: 'indian oil', address: 'main road' },
-          // { ID: 78767, name: 'TEST SITE 2',phone:'65453', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
-          // { ID: 846779, name: 'BO TEST SITE',phone:'3432423', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
-          // { ID: 344231, name: 'gilabrco site', brand: 'indian oil', address: 'main road' },
-          // { ID: 78767, name: 'TEST SITE 2',phone:'65453', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
-          // { ID: 846779, name: 'BO TEST SITE',phone:'3432423', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
-          // { ID: 344231, name: 'gilabrco site', brand: 'indian oil', address: 'main road' },
-          // { ID: 78767, name: 'TEST SITE 2',phone:'65453', brand: 'Gilbarco', address: '147 MAIN STREET, GREENSBORO, NC' },
+           {userinput:"site id 434234", key1: "SiteId: 846777  Name: BO TEST SITE brand: Gilbarco", key2 :" , address: '147 MAIN STREET, GREENSBORO, NC",key3:"phone:3432423",key4:"this site is showing reported isses" },
+           {userinput:"site id 434234" , key1: "SiteId: 846778  Name: BO TEST SITE brand: Gilbarco", key2 :" , address: '147 MAIN STREET, GREENSBORO, NC",key3:"phone:3432423"},
+           {userinput:"site id 434234", key1: "SiteId: 846779  Name: BO TEST SITE brand: Gilbarco", key2 :" , address: '147 MAIN STREET, GREENSBORO, NC",key3:"phone:3432423" },
+          
           
 
           

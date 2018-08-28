@@ -1,0 +1,19 @@
+.striped-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    max-width: 200px;
+}
+.striped-list > p {
+    border-bottom: 1px solid rgb(221,221,221);
+    padding: 6px;
+}
+.striped-list > p:nth-of-type(odd) {
+    background-color: #e9e9f9 ;
+}
+.striped-list > p:last-child {
+    border-bottom: none;
+}
+.p{
+    font-size: 15px;
+}
