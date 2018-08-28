@@ -41,7 +41,8 @@ console.log('json_data from init',this.json_data);
 
 transferData(i): void {
       // send message to subscribers via observable subject
-      this.DataService.emitter(i);
+     // console.log(i[3][1]);
+      this.DataService.emitter(i[3][1]);
   }
 public checkElement(array,str)
   {        

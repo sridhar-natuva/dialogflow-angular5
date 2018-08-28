@@ -27,14 +27,14 @@ export class MessageFormComponent implements OnInit, OnDestroy {
   constructor(private WatsonAPI: WatsonAPI, private DataService: DataService) {
     this.subscription = this.DataService.receiver().subscribe(res => {
     this.variable = res;
-      console.log(this.variable.message[3][1]);
-      let data = {
-        text: this.variable.message[3][1],
-        id: '12345',
-        context: this.previousContext
-      }
+    //  console.log(this.variable.message[3][1]);
+      // let data = {
+      //   text: this.variable.message[3][1],
+      //   id: '12345',
+      //   context: this.previousContext
+      // }
       this.messages.push(
-        new Message(this.variable.message[3][1], 'assets/images/user.png', new Date(), 'user')
+        new Message(this.variable.message, 'assets/images/user.png', new Date(), 'user')
       );
     });
   }

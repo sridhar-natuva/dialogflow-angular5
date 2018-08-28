@@ -5,7 +5,7 @@ import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class DataService {
     private subject = new Subject<any>();
-    emitter(message: []) {
+    emitter(message: string) {
         this.subject.next({ message });
     }
     receiver(): Observable<any> {
