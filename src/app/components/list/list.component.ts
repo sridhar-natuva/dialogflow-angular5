@@ -62,8 +62,10 @@ ngOnInit(){
 callX(x): string {
   var tempVal = "";
   for(var i=1;i<x.length;i++){
-    tempVal = tempVal + x[i];
 
+    tempVal = tempVal + x[i]  ;
+    
+    // document.write("<br>");
   }
   return tempVal;
 }

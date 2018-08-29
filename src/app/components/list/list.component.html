@@ -1,12 +1,12 @@
 <mat-list class="job-ad">
     <!-- <h3 mat-subheader>keys {{ keys }} and values {{values}} </h3> -->
     <!-- class="striped-list"  -->
-    <div *ngFor="let x of entries"(click)="transferData(x)">
+    <div class="p" *ngFor="let x of entries"(click)="transferData(x)" [class.active]="x == selectedRow">
         <!-- <h3 mat-subheader>{{ entries }} </h3> -->
         <!-- <mat-icon mat-list-icon>folder</mat-icon> -->
         <!-- <div mat-line *ngIf=i.includes(userinput) then content else other_content"></div> --> 
         <!-- <p>{{callX(x)}}</p> -->
-        <p class="p">{{callX(x)}}</p>
+        <p >{{callX(x)}}</p>
         <!-- <div mat-line *ngIf="checkElement (i,'new_line'); then content else other_content"></div> -->
     </div>
 

@@ -36,10 +36,10 @@ export class WatsonAPI {
       text: 'SiteID 826010 is a Gilbarco station located in 7300 West Friendly Avenue, Greensboro, phone: 3365478899,is showing error/warning/down status due to:',
       context: {},
       result: {
-        type: 'list1',
+        type: 'list',
         data: [
-          { key1: "ENCORE dispenser  position 1 has the FLEXPAY II fueling position 2 has (M5 device id 44548) has status down with a cause of SSOM LOST CONNECTION TO SPOT.", key2 :"Component display is in a down state",key3:"Component pinpad is in a down state",key4:"Component printer is in a down state",userinput:"site id 434234" },
-          { key1: "ENCORE dispenser  position 1 has the FLEXPAY II fueling position 2 has (M5 device id 44548) has status down with a cause of SSOM LOST CONNECTION TO SPOT.", key2 :"Component display is in a down state",key3:"Component pinpad is in a down state",key4:"Component printer is in a down state",userinput:"site id 434234" },
+          {userinput:"site id 434234", key1: "ENCORE dispenser  position 1 has the FLEXPAY II fueling position 2 has (M5 device id 44548) has status down with a cause of SSOM LOST CONNECTION TO SPOT.", key2 :"Component display is in a down state",key3:"Component pinpad is in a down state",key4:"Component printer is in a down state" },
+          {userinput:"site id 434234", key1: "ENCORE dispenser  position 1 has the FLEXPAY II fueling position 2 has (M5 device id 44548) has status down with a cause of SSOM LOST CONNECTION TO SPOT.", key2 :"Component display is in a down state",key3:"Component pinpad is in a down state",key4:"Component printer is in a down state" },
           
           //{ ID: 1, name: 'John', brand: 'Doe', address: 'address goes here' },
 
@@ -76,7 +76,17 @@ export class WatsonAPI {
         ]
       }
 
+      // result: {
+      //   type: 'list',
+      //   data: [
+      //     {userinput:"site id 434234", key1: "ENCORE dispenser  position 1 has the FLEXPAY II fueling position 2 has (M5 device id 44548) has status down with a cause of SSOM LOST CONNECTION TO SPOT.", key2 :"Component display is in a down state",key3:"Component pinpad is in a down state",key4:"Component printer is in a down state" },
+      //     {userinput:"site id 434234", key1: "ENCORE dispenser  position 1 has the FLEXPAY II fueling position 2 has (M5 device id 44548) has status down with a cause of SSOM LOST CONNECTION TO SPOT.", key2 :"Component display is in a down state",key3:"Component pinpad is in a down state",key4:"Component printer is in a down state" },
+          
+      //     //{ ID: 1, name: 'John', brand: 'Doe', address: 'address goes here' },
 
+          
+      //   ]
+      // }
 
       // result: {
       //   type: 'table',
